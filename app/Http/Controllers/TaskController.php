@@ -65,7 +65,7 @@ class TaskController extends Controller
     public function edit(Task $task)
     {
         // Policyによる認可チェック
-        $this->authorize('edit', $task);
+        $this->authorize('update', $task);
 
         $categories = Category::orderBy('name')->get();
 
