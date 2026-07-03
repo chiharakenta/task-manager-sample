@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 
 // 仮ルート（Chapter 6で本実装に置き換え）
 Route::middleware('auth')->group(function () {
+    Route::resource('categories', CategoryController::class);
+
     Route::get('/tasks', fn() => 'タスク一覧（準備中）')->name('tasks.index');
-    Route::get('/categories', fn() => 'カテゴリー一覧（準備中）')->name('categories.index');
 });
